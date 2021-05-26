@@ -55,6 +55,7 @@ Promise.all([
   });
 arrayUsd = JSON.parse(localStorage.getItem("arr"));
 arrayInfo = arrayUsd.flat();
+
 console.log(arrayInfo);
 start = Date.parse("2016-06-01");
 end = Date.parse(today);
@@ -74,7 +75,7 @@ for (let i = 0; i < arrayInfo.length; i++) {
   delete arrayInfo[i].Cur_OfficialRate;
   delete arrayInfo[i].Date;
 }
-
+localStorage.clear();
 myForm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (firstDate.value < secondDate.value === false) {
